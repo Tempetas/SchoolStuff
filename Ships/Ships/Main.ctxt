@@ -1,0 +1,17 @@
+#BlueJ class context
+comment0.target=Main
+comment1.params=
+comment1.target=Main()
+comment2.params=
+comment2.target=void\ gameLoop()
+comment3.params=
+comment3.target=void\ drawField()
+comment4.params=
+comment4.target=void\ spawnShips()
+comment5.params=pos
+comment5.target=int\ posToCell(Vector2)
+comment6.params=cell
+comment6.target=boolean\ isCellIsolated(int)
+comment7.params=cell
+comment7.target=boolean\ getCellState(int)
+numComments=8
