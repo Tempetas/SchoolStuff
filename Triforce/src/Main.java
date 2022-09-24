@@ -48,7 +48,7 @@ public class Main extends EBAnwendung
         hatStift.hoch();
     }
 
-    private void triforce(float x, float y, int depth) { 
+    private void triforce(float x, float y, int depth) {
         if (depth > 0) {
             float size = (int)Math.pow(2, depth + 3);
 
@@ -66,3 +66,4 @@ public class Main extends EBAnwendung
     }
 
 }
+
