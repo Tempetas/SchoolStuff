@@ -5,8 +5,9 @@ import java.util.ArrayList;
 import java.util.List;
 
 public class Main {
-    private BetterScreen screen;
-    private BufferedPen pen;
+    private Fenster screen;
+    //TODO: fix font rendering
+    private BetterStift pen;
     private Maus mouse;
 
     private List<Board> boards;
@@ -23,12 +24,12 @@ public class Main {
     }
 
     public Main() {
-        this.screen = new BetterScreen(800, 600);
+        this.screen = new Fenster(800, 600);
         this.screen.setTitle("Circles");
         this.screen.setResizable(false);
 
         //Buffer everything before rendering to prevent flickering
-        this.pen = new BufferedPen(screen);
+        this.pen = new BetterStift(screen);
         this.mouse = new Maus();
         this.cue = new Cue();
         this.boards = new ArrayList();
@@ -72,7 +73,7 @@ public class Main {
         secondaryBoard.addCircle(numCircle);
 
         this.boards.add(secondaryBoard);
-   
+
         this.gameLoop();
         this.pen.gibFrei();
         this.screen.gibFrei();
@@ -100,3 +101,4 @@ public class Main {
         }
     }
 }
+

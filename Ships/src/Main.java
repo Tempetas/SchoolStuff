@@ -45,16 +45,16 @@ public class Main
             if (mouse.istGedrueckt()) {
                 int clickedCell = posToCell(new Vector2(mouse.hPosition(), mouse.vPosition()));
 
-                for (Ship ship : ships) { 
+                for (Ship ship : ships) {
                     if (ship == null)
                         continue;
-                    for (int i = 0; i < ship.cells.length; i++) { 
+                    for (int i = 0; i < ship.cells.length; i++) {
                         int cell = ship.cells[i];
                         if (clickedCell == cell) {
                             pen.bewegeBis(Math.floor(mouse.hPosition() / cellWidth) * cellWidth, Math.floor(mouse.vPosition() / cellWidth) * cellWidth);
                             pen.setzeFuellMuster(1);
                             pen.zeichneRechteck(cellWidth, cellWidth);
-                            pen.setzeFuellMuster(1);
+                            pen.setzeFuellMuster(0);
                             //ship.cellStates[Arrays.asList(ship.cells).indexOf(cell)] = true;
                             break;
                         }
@@ -154,3 +154,4 @@ public class Main
         return field[cell];
     }
 }
+

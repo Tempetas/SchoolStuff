@@ -1,12 +1,12 @@
 package Darts;
 
-//time to overcomplicate things
+//Time to overcomplicate things
 
 import sum.kern.*;
 
 public class Main {
-    Bildschirm screen;
-    Buntstift pen;
+    Fenster screen;
+    BetterStift pen;
     Tastatur keyboard;
     Maus mouse;
 
@@ -30,13 +30,13 @@ public class Main {
     public Main()  {
         frameStartTime = System.currentTimeMillis();
 
-        screen = new Bildschirm(800, 600);
-        pen = new Buntstift();
+        screen = new Fenster(800, 600);
+        pen = new BetterStift(screen);
         keyboard = new Tastatur();
-        Maus mouse = new Maus();
+        mouse = new Maus();
 
         arrow = new Arrow();
-        board = new Board(new Vector2(650, 300));  
+        board = new Board(new Vector2(650, 300));
 
         scorePos = new Vector2(30, 10);
         this.drawScore();
@@ -46,15 +46,11 @@ public class Main {
 
             this.drawBorders(screen);
 
-            pen.radiere();
-            arrow.draw(pen);
-            pen.normal();
-
             boolean clicked = false;
 
             if (keyboard.wurdeGedrueckt()) {
                 switch (keyboard.zeichen()) {
-                    case 'q': 
+                    case 'q':
                     shouldExit = true;
                     break;
                 }
@@ -64,9 +60,6 @@ public class Main {
             while (mouse.istGedrueckt() && !arrow.fired) {
                 frameStartTime = System.currentTimeMillis();
                 clicked = true;
-                pen.radiere();
-                arrow.draw(pen);
-                pen.normal();
 
                 arrow.rotation += 0.02;
 
@@ -75,13 +68,14 @@ public class Main {
                 }
 
                 arrow.draw(pen);
+                board.draw(pen);
+
+                pen.drawToScreen();
+
                 deltaTime = System.currentTimeMillis() - frameStartTime;
             }
 
             if (clicked) {
-                pen.radiere();
-                arrow.draw(pen);
-                pen.normal();
                 clicked = false;
                 arrow.fire();
             }
@@ -98,22 +92,13 @@ public class Main {
             arrow.draw(pen);
             board.draw(pen);
 
+            pen.drawToScreen();
+
             deltaTime = System.currentTimeMillis() - frameStartTime;
         }
     }
 
     private void drawScore() {
-        //Erase old score
-        pen.bewegeBis(scorePos.x + 40, scorePos.y);
-        pen.radiere();
-        pen.runter();
-        for (int i = 0; i < 20; i++) {
-            pen.bewegeBis(scorePos.x + 40 + i, scorePos.y);
-            pen.bewegeBis(scorePos.x + 40 + i, scorePos.y - 20);
-        }
-        pen.hoch();
-        pen.normal();
-
         pen.bewegeBis(scorePos.x, scorePos.y);
         pen.schreibeText("Score: ");
         pen.bewegeBis(scorePos.x + 40, scorePos.y);
@@ -126,3 +111,4 @@ public class Main {
         pen.zeichneRechteck(screen.breite() - borderWidth * 2, screen.hoehe() - borderWidth * 2);
     }
 }
+
