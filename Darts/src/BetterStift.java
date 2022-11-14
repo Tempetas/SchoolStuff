@@ -1,5 +1,3 @@
-package Darts;
-
 import sum.kern.Buntstift;
 import sum.kern.Fenster;
 

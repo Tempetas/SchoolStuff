@@ -1,5 +1,3 @@
-package Circles;
-
 import sum.kern.*;
 import java.util.ArrayList;
 import java.util.List;
@@ -77,7 +75,7 @@ public class BasicCircle {
                 Vector2 backVelPass = circle.getVelocity().multiplyByNum(circle.getMass() / this.mass).add(diff);
 
                 this.velocity = this.velocity.add(backVelPass).subtract(velPass.multiplyByNum(0.5f));
-                
+
                 circle.setVelocity(circle.getVelocity().add(velPass).subtract(backVelPass.multiplyByNum(0.5f)));
             }
         }

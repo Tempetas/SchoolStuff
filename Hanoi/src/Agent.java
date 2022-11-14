@@ -1,5 +1,3 @@
-package Hanoi;
-
 public class Agent {
   public NeuralNetwork net;
   public int sclCases;

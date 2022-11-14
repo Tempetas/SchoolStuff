@@ -1,5 +1,3 @@
-package Ships;
-
 import sum.kern.*;
 import java.util.Arrays;
 

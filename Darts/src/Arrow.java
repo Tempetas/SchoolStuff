@@ -1,5 +1,3 @@
-package Darts;
-
 import sum.kern.*;
 
 public class Arrow {

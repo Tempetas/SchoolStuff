@@ -1,5 +1,3 @@
-package Hanoi;
-
 import java.util.Random;
 
 public class NeuralNetwork {

@@ -1,5 +1,3 @@
-package Triforce;
-
 import sum.komponenten.*;
 import sum.werkzeuge.*;
 import sum.ereignis.*;

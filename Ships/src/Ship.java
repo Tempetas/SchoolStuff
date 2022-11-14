@@ -1,5 +1,3 @@
-package Ships;
-
 public class Ship
 {
     public int[] cells;

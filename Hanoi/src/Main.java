@@ -1,5 +1,3 @@
-package Hanoi;
-
 import java.util.Random;
 
 public class Main {
@@ -10,10 +8,10 @@ public class Main {
     public Main() {
         System.out.println("Initialising agents");
 
-        int layout[] = {3, 16, 16, 16, 1};
+        int layout[] = {3, 6, 4, 1};
 
         int agentCount = 10;
-        int iterations = 6;
+        int iterations = 1000;
 
         Agent agents[] = new Agent[agentCount];
 
@@ -52,9 +50,7 @@ public class Main {
                     continue;
                 }
 
-                Random rand = new Random(System.currentTimeMillis());
-
-                for (int l = 1; l < bestAgent.net.layers.length; l++) {
+                for (int l = 1; l < bestAgent.net.layers.length - 1; l++) {
                     for (int k = 0; k < bestAgent.net.layers[l].length; k++) {
                         agents[j].net.layers[l][k].bias = bestAgent.net.layers[l][k].bias;
 
@@ -74,7 +70,7 @@ public class Main {
     }
 
     Agent findBestAgent(Agent agents[]) {
-        float testCases[][] = {{1, 0, 1, 1}, {1, 1, 0, 0}, {1, 1, 1, 1}, {0, 1, 0, 0}, {0, 0, 1, 1}, {0, 0, 0, 0}};
+        float testCases[][] = {{1, 0, 1, 1}, {1, 1, 0, 0}, {1, 1, 1, 1}, {0, 1, 0, 0}, {0, 0, 1, 1}, {0, 0, 0, 0}, {0, 1, 1, 1}, {1, 0, 0, 0}};
 
         Agent bestAgent = agents[0];
 
@@ -89,10 +85,6 @@ public class Main {
 
             if (agents[i].sclCases > bestAgent.sclCases) {
                 bestAgent = agents[i];
-
-                System.out.println("WE FUCKING WON");
-
-                System.exit(1);
             }
         }
 

@@ -1,5 +1,3 @@
-package Hanoi;
-
 public class Neuron {
   public float weights[];
   public float bias;

@@ -1,5 +1,3 @@
-package Darts;
-
 //Time to overcomplicate things
 
 import sum.kern.*;

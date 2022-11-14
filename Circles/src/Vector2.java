@@ -1,5 +1,3 @@
-package Circles;
-
 //Copy pasted from an old project
 public class Vector2 {
     public float x, y;
@@ -24,7 +22,7 @@ public class Vector2 {
     Vector2 divide(Vector2 b) {
         return new Vector2(this.x / b.x, this.y / b.y);
     }
-    
+
     Vector2 multiplyByNum(float num) {
         return new Vector2(this.x * num, this.y * num);
     }

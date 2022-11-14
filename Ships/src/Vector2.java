@@ -1,5 +1,3 @@
-package Ships;
-
 //Copy pasted from an old project
 public class Vector2 {
     public float x, y;

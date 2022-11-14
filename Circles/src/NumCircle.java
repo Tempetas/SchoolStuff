@@ -1,5 +1,3 @@
-package Circles;
-
 import sum.kern.*;
 
 public class NumCircle extends BasicCircle {

@@ -1,5 +1,3 @@
-package Circles;
-
 import sum.kern.*;
 import java.util.ArrayList;
 import java.util.List;
@@ -24,7 +22,7 @@ public class Board {
 
         circles.add(newCircle);
     }
-    
+
     public List<BasicCircle> getCircles() {
         return circles;
     }
@@ -55,8 +53,8 @@ public class Board {
             if (pos.y - r < startPos.y || pos.y + r > endPos.y) {
                 circle.setVelocity(new Vector2(circle.getVelocity().x, -circle.getVelocity().y * 0.9f));
             }
-                
-           
+
+
             circle.tick(deltaTime, circles);
             pen.setzeFuellMuster(1);
             circle.draw(pen);
