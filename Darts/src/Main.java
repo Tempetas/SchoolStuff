@@ -59,7 +59,7 @@ public class Main {
                 frameStartTime = System.currentTimeMillis();
                 clicked = true;
 
-                arrow.rotation += 0.02;
+                arrow.rotation += 0.06;
 
                 if (arrow.rotation > 30) {
                     arrow.rotation = -30;
