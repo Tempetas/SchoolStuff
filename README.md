@@ -5,3 +5,4 @@ The code quality in this repository is not only below average, but is, in fact, 
 It can vary heavily depending on when a project was written,
 which could have been a week or like 3 years ago.
 
+![Screenshot](https://github.com/Tempetas/SchoolStuff/blob/main/screenshot.png?raw=true)
